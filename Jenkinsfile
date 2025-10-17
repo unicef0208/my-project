@@ -36,7 +36,7 @@ pipeline {
 
                     // Helm 차트 저장소 클론
                     withCredentials([usernamePassword(credentialsId: 'github-pat', passwordVariable: 'GIT_TOKEN', usernameVariable: 'GIT_USERNAME')]) {
-                        sh "git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/unicef0208/my-helm-charts.git"
+                        sh 'git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/unicef0208/my-helm-charts.git'
                     }
 
                     // values.yaml 파일 수정 및 푸시
